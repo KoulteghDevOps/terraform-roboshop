@@ -8,6 +8,6 @@ module "vpc" {
   env        = var.env
 }
 
-output "vpc" {
-  value = module.vpc
-}
+# output "vpc" {
+#   value = module.vpc
+# }
