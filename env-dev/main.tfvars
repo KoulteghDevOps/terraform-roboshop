@@ -43,6 +43,9 @@ application = {
     name = "catalogue"
     instance_type = "t3.micro"
     subnet_name = "application"
+    desired_capacity   = 2
+    max_size           = 5
+    min_size           = 2
     allow_app_cidr     = "webserver"
   }
   # cart = {
