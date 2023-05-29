@@ -26,3 +26,16 @@ vpc = {
     }
   }  
 }
+
+application= {
+  frontend = {
+    name = "frontend"
+    instance_type = "t3.small"
+    subnet_name = "web"
+  }
+  catelogue = {
+    name = "catalogue"
+    instance_type = "t3.small"
+    subnet_name = "app"
+  }
+}
