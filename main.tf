@@ -4,8 +4,11 @@ module "vpc" {
   for_each   = var.vpc
   cidr_block = each.value["cidr_block"]
   subnets = each.value["subnets"]
+
   tags       = local.tags
   env        = var.env
+  default_vpc_id   = var.default_vpc_id
+  default_vpc_cidr = var.default_vpc_cidr
 }
 
 module "webserver" {
@@ -17,6 +20,7 @@ module "webserver" {
   desired_capacity = each.value["desired_capacity"]
   max_size         = each.value["max_size"]
   min_size         = each.value["min_size"]
+   
 
   env              = var.env
   bastion_cidr     = var.bastion_cidr
