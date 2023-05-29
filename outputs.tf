@@ -1,3 +1,7 @@
+# output "vpc" {
+#   value = module.vpc
+# }
+
 output "vpc" {
-  value = module.vpc
+  value = lookup(module.vpc, "main", null)
 }
