@@ -27,15 +27,15 @@ vpc = {
   }  
 }
 
-application= {
+application = {
   frontend = {
     name = "frontend"
     instance_type = "t3.small"
-    subnet_name = "web"
+    subnet_name = "webserver"
   }
   catelogue = {
     name = "catalogue"
-    instance_type = "t3.small"
-    subnet_name = "app"
+    instance_type = "t3.micro"
+    subnet_name = "application"
   }
 }
