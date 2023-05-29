@@ -8,10 +8,10 @@ module "vpc" {
   env        = var.env
 }
 
-module "webserver" {
-  source = "git::https://github.com/KoulteghDevOps/tf_module_app.git"
+# module "webserver" {
+#   source = "git::https://github.com/KoulteghDevOps/tf_module_app.git"
 
-  for_each = var.application
-  instance_type = each.value["instance_type"]
-  subnet_id = element(lookup(lookup(lookup(module.vpc, "main", null), each.value["subnet_name"], null), "subnet_ids", null), 0)
-}
+#   for_each = var.application
+#   instance_type = each.value["instance_type"]
+#   subnet_id = element(lookup(lookup(lookup(module.vpc, "main", null), each.value["subnet_name"], null), "subnet_ids", null), 0)
+# }
