@@ -1,4 +1,5 @@
 env = "dev"
+bastion_cidr = ["172.31.93.66"]
 vpc = {
   main = {
     cidr_block = "10.0.0.0/16"
@@ -32,10 +33,36 @@ application = {
     name = "frontend"
     instance_type = "t3.small"
     subnet_name = "webserver"
+    desired_capacity   = 2
+    max_size           = 5
+    min_size           = 2
+    allow_app_cidr     = "public"
+
   }
   catelogue = {
     name = "catalogue"
     instance_type = "t3.micro"
     subnet_name = "application"
+    allow_app_cidr     = "webserver"
   }
+  # cart = {
+  #   name = "cart"
+  #   instance_type = "t3.micro"
+  #   subnet_name = "application"
+  # }
+  # user = {
+  #   name = "user"
+  #   instance_type = "t3.micro"
+  #   subnet_name = "application"
+  # }
+  # shipping = {
+  #   name = "shipping"
+  #   instance_type = "t3.micro"
+  #   subnet_name = "application"
+  # }
+  # payment = {
+  #   name = "payment"
+  #   instance_type = "t3.micro"
+  #   subnet_name = "application"
+  # }
 }
