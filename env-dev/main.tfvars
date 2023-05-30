@@ -79,6 +79,5 @@ docdb = {
       subnet_name    = "database"
       allow_db_cidr  = "application"
       engine_version = "4.0.0"
-      kms_arn        = var.kms_arn
     }
 }
