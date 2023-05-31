@@ -4,6 +4,8 @@ default_vpc_id   = "vpc-063bfcfb7f8faec35"
 default_vpc_cidr = "172.31.0.0/16"
 default_vpc_rtid = "rtb-0f4cf25785f56057f"
 kms_arn          = "arn:aws:kms:us-east-1:878756956432:key/c770d687-27ad-4188-b4b0-c3d4ce34a454"
+domain_name      = "gilbraltar.co.uk"
+domain_id        = "Z09569901LP0VHA42NP6C"
 vpc = {
   main = {
     cidr_block = "10.0.0.0/16"
@@ -52,26 +54,26 @@ application = {
     min_size         = 2
     allow_app_cidr   = "webserver"
   }
-  # cart = {
-  #   name = "cart"
-  #   instance_type = "t3.micro"
-  #   subnet_name = "application"
-  # }
-  # user = {
-  #   name = "user"
-  #   instance_type = "t3.micro"
-  #   subnet_name = "application"
-  # }
-  # shipping = {
-  #   name = "shipping"
-  #   instance_type = "t3.micro"
-  #   subnet_name = "application"
-  # }
-  # payment = {
-  #   name = "payment"
-  #   instance_type = "t3.micro"
-  #   subnet_name = "application"
-  # }
+#   cart = {
+#     name = "cart"
+#     instance_type = "t3.micro"
+#     subnet_name = "application"
+#   }
+#   user = {
+#     name = "user"
+#     instance_type = "t3.micro"
+#     subnet_name = "application"
+#   }
+#   shipping = {
+#     name = "shipping"
+#     instance_type = "t3.micro"
+#     subnet_name = "application"
+#   }
+#   payment = {
+#     name = "payment"
+#     instance_type = "t3.micro"
+#     subnet_name = "application"
+#   }
 }
 
 docdb = {
@@ -111,5 +113,20 @@ rabbitmq = {
       allow_db_cidr  = "application"
       instance_type = "t3.small"
     }
+}
+
+alb = {
+  public = {
+    name           = "public"
+    subnet_name    = "public"
+    allow_alb_cidr = null
+    internal       = false
+  }
+  private = {
+    name           = "private"
+    subnet_name    = "application"
+    allow_alb_cidr = "webserver"
+    internal       = true
+  }
 }
 

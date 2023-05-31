@@ -1,12 +1,15 @@
 variable "env" {}
 variable "vpc" {}
 variable "application" {}
-variable "bastion_cidr" {} 
+variable "bastion_cidr" {}
 variable "default_vpc_id" {}
 variable "default_vpc_cidr" {}
 variable "default_vpc_rtid" {}
-variable "docdb" {}
 variable "kms_arn" {}
+variable "docdb" {}
 variable "rds" {}
 variable "elasticache" {}
 variable "rabbitmq" {}
+variable "alb" {}
+variable "domain_name" {}
+variable "domain_id" {}
