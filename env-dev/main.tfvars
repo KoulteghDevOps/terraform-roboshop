@@ -39,20 +39,26 @@ application = {
     name             = "frontend"
     instance_type    = "t3.small"
     subnet_name      = "webserver"
-    desired_capacity = 2
-    max_size         = 5
-    min_size         = 2
+    desired_capacity = 1
+    max_size         = 10
+    min_size         = 1
+    app_port         = 80
     allow_app_cidr   = "public"
-
+    listener_priority = 1
+    lb_type           = "public"
+    dns_name          = "dev"
   }
   catelogue = {
     name             = "catalogue"
     instance_type    = "t3.micro"
     subnet_name      = "application"
-    desired_capacity = 2
-    max_size         = 5
-    min_size         = 2
+    desired_capacity = 1
+    max_size         = 10
+    min_size         = 1
+    app_port         = 8080
     allow_app_cidr   = "webserver"
+    listener_priority = 1
+    lb_type           = "private"
   }
 #   cart = {
 #     name = "cart"
