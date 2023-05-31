@@ -104,3 +104,12 @@ elasticache = {
       node_type = "cache.t3.micro"
     }
 }
+
+rabbitmq = {
+    main = {
+      subnet_name    = "database"
+      allow_db_cidr  = "application"
+      instance_type = "t3.small"
+    }
+}
+
