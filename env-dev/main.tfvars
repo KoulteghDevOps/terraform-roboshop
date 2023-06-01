@@ -47,6 +47,7 @@ application = {
     listener_priority = 1
     lb_type           = "public"
     dns_name          = "dev"
+    parameters        = []
     
   }
   catelogue = {
