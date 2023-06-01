@@ -47,6 +47,7 @@ application = {
     listener_priority = 1
     lb_type           = "public"
     dns_name          = "dev"
+    
   }
   catelogue = {
     name             = "catalogue"
@@ -59,6 +60,7 @@ application = {
     allow_app_cidr   = "webserver"
     listener_priority = 1
     lb_type           = "private"
+    parameters        = ["docdb"]
   }
 #   cart = {
 #     name = "cart"

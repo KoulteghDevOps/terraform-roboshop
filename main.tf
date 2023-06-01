@@ -123,6 +123,7 @@ module "application" {
   min_size          = each.value["min_size"]
   app_port          = each.value["app_port"]
   listener_priority = each.value["listener_priority"]
+  parameters        = each.value["parameters"]
   dns_name          = each.value["name"] == "frontend" ? each.value["dns_name"] : "${each.value["name"]}-${var.env}"
 
   subnet_ids     = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["subnet_name"], null), "subnet_ids", null)
