@@ -1,3 +1,7 @@
+provider "aws" {
+  region = "us_east_1"
+}
+
 env              = "dev"
 bastion_cidr     = ["172.31.93.66/32"]
 default_vpc_id   = "vpc-063bfcfb7f8faec35"
@@ -52,6 +56,62 @@ application = {
   }
   catelogue = {
     name             = "catalogue"
+    instance_type    = "t3.micro"
+    subnet_name      = "application"
+    desired_capacity = 1
+    max_size         = 10
+    min_size         = 1
+    app_port         = 8080
+    allow_app_cidr   = "application"
+    listener_priority = 1
+    lb_type           = "private"
+    parameters        = ["docdb"]
+  }
+
+  cart = {
+    name             = "cart"
+    instance_type    = "t3.micro"
+    subnet_name      = "application"
+    desired_capacity = 1
+    max_size         = 10
+    min_size         = 1
+    app_port         = 8080
+    allow_app_cidr   = "application"
+    listener_priority = 1
+    lb_type           = "private"
+    parameters        = ["docdb"]
+  }
+
+  shipping = {
+    name             = "shipping"
+    instance_type    = "t3.micro"
+    subnet_name      = "application"
+    desired_capacity = 1
+    max_size         = 10
+    min_size         = 1
+    app_port         = 8080
+    allow_app_cidr   = "application"
+    listener_priority = 1
+    lb_type           = "private"
+    parameters        = ["docdb"]
+  }
+
+  payment = {
+    name             = "payment"
+    instance_type    = "t3.micro"
+    subnet_name      = "application"
+    desired_capacity = 1
+    max_size         = 10
+    min_size         = 1
+    app_port         = 8080
+    allow_app_cidr   = "application"
+    listener_priority = 1
+    lb_type           = "private"
+    parameters        = ["docdb"]
+  }
+
+  user = {
+    name             = "user"
     instance_type    = "t3.micro"
     subnet_name      = "application"
     desired_capacity = 1
