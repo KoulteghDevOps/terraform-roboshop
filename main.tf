@@ -1,6 +1,6 @@
-provider "aws" {
-  region = "us_east_1"
-}
+# provider "aws" {
+#   region = "us_east_1"
+# }
 
 module "vpc" {
   source = "git::https://github.com/KoulteghDevOps/tf_module_vpc.git"
