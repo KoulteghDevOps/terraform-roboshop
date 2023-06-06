@@ -64,61 +64,61 @@ application = {
     parameters        = ["docdb"]
   }
 
-  cart = {
-    name             = "cart"
-    instance_type    = "t3.micro"
-    subnet_name      = "application"
-    desired_capacity = 1
-    max_size         = 10
-    min_size         = 1
-    app_port         = 8080
-    allow_app_cidr   = "application"
-    listener_priority = 2
-    lb_type           = "private"
-    parameters        = ["docdb"]
-  }
+  # cart = {
+  #   name             = "cart"
+  #   instance_type    = "t3.micro"
+  #   subnet_name      = "application"
+  #   desired_capacity = 1
+  #   max_size         = 10
+  #   min_size         = 1
+  #   app_port         = 8080
+  #   allow_app_cidr   = "application"cd A
+  #   listener_priority = 2
+  #   lb_type           = "private"
+  #   parameters        = ["docdb"]
+  # }
 
-  shipping = {
-    name             = "shipping"
-    instance_type    = "t3.micro"
-    subnet_name      = "application"
-    desired_capacity = 1
-    max_size         = 10
-    min_size         = 1
-    app_port         = 8080
-    allow_app_cidr   = "application"
-    listener_priority = 3
-    lb_type           = "private"
-    parameters        = ["docdb"]
-  }
+  # shipping = {
+  #   name             = "shipping"
+  #   instance_type    = "t3.micro"
+  #   subnet_name      = "application"
+  #   desired_capacity = 1
+  #   max_size         = 10
+  #   min_size         = 1
+  #   app_port         = 8080
+  #   allow_app_cidr   = "application"
+  #   listener_priority = 3
+  #   lb_type           = "private"
+  #   parameters        = ["docdb"]
+  # }
 
-  payment = {
-    name             = "payment"
-    instance_type    = "t3.micro"
-    subnet_name      = "application"
-    desired_capacity = 1
-    max_size         = 10
-    min_size         = 1
-    app_port         = 8080
-    allow_app_cidr   = "application"
-    listener_priority = 4
-    lb_type           = "private"
-    parameters        = ["docdb"]
-  }
+  # payment = {
+  #   name             = "payment"
+  #   instance_type    = "t3.micro"
+  #   subnet_name      = "application"
+  #   desired_capacity = 1
+  #   max_size         = 10
+  #   min_size         = 1
+  #   app_port         = 8080
+  #   allow_app_cidr   = "application"
+  #   listener_priority = 4
+  #   lb_type           = "private"
+  #   parameters        = ["docdb"]
+  # }
 
-  user = {
-    name             = "user"
-    instance_type    = "t3.micro"
-    subnet_name      = "application"
-    desired_capacity = 1
-    max_size         = 10
-    min_size         = 1
-    app_port         = 8080
-    allow_app_cidr   = "application"
-    listener_priority = 5
-    lb_type           = "private"
-    parameters        = ["docdb"]
-  }
+  # user = {
+  #   name             = "user"
+  #   instance_type    = "t3.micro"
+  #   subnet_name      = "application"
+  #   desired_capacity = 1
+  #   max_size         = 10
+  #   min_size         = 1
+  #   app_port         = 8080
+  #   allow_app_cidr   = "application"
+  #   listener_priority = 5
+  #   lb_type           = "private"
+  #   parameters        = ["docdb"]
+  # }
 #   cart = {
 #     name = "cart"
 #     instance_type = "t3.micro"
