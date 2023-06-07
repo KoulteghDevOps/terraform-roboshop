@@ -54,7 +54,7 @@ application = {
   }
   catelogue = {
     name             = "catalogue"
-    instance_type    = "t3.micro"
+    instance_type    = "t3.small"
     subnet_name      = "application"
     desired_capacity = 1
     max_size         = 10
@@ -68,7 +68,7 @@ application = {
 
   cart = {
     name             = "cart"
-    instance_type    = "t3.micro"
+    instance_type    = "t3.small"
     subnet_name      = "application"
     desired_capacity = 1
     max_size         = 10
@@ -82,7 +82,7 @@ application = {
 
   shipping = {
     name             = "shipping"
-    instance_type    = "t3.micro"
+    instance_type    = "t3.small"
     subnet_name      = "application"
     desired_capacity = 1
     max_size         = 10
@@ -96,7 +96,7 @@ application = {
 
   payment = {
     name             = "payment"
-    instance_type    = "t3.micro"
+    instance_type    = "t3.small"
     subnet_name      = "application"
     desired_capacity = 1
     max_size         = 10
@@ -110,7 +110,7 @@ application = {
 
   user = {
     name             = "user"
-    instance_type    = "t3.micro"
+    instance_type    = "t3.small"
     subnet_name      = "application"
     desired_capacity = 1
     max_size         = 10
@@ -121,26 +121,6 @@ application = {
     lb_type           = "private"
     parameters        = ["docdb"]
   }
-#   cart = {
-#     name = "cart"
-#     instance_type = "t3.micro"
-#     subnet_name = "application"
-#   }
-#   user = {
-#     name = "user"
-#     instance_type = "t3.micro"
-#     subnet_name = "application"
-#   }
-#   shipping = {
-#     name = "shipping"
-#     instance_type = "t3.micro"
-#     subnet_name = "application"
-#   }
-#   payment = {
-#     name = "payment"
-#     instance_type = "t3.micro"
-#     subnet_name = "application"
-#   }
 }
 
 docdb = {
