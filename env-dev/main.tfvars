@@ -1,7 +1,7 @@
 env              = "dev"
 monitor_cidr     = ["172.31.80.62/32"]
 # aws_region       = "us_east_1"
-bastion_cidr     = ["172.31.93.66/32"]
+bastion_cidr     = ["172.31.13.60/32"]
 default_vpc_id   = "vpc-063bfcfb7f8faec35"
 default_vpc_cidr = "172.31.0.0/16"
 default_vpc_rtid = "rtb-0f4cf25785f56057f"
