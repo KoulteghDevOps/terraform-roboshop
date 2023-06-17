@@ -82,7 +82,7 @@ application = {
 
   shipping = {
     name             = "shipping"
-    instance_type    = "t3.small"
+    instance_type    = "t3.medium"
     subnet_name      = "application"
     desired_capacity = 1
     max_size         = 10
