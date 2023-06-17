@@ -172,6 +172,5 @@ resource "null_resource" "load" {
       "docker pull robotshop/rs-load"
     ]
 
-
   }
 }
