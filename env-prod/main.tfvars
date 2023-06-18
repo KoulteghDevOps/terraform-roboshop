@@ -139,7 +139,7 @@ rds = {
       allow_db_cidr  = "application"
       engine_version = "5.7.mysql_aurora.2.11.2"
       instance_count = 1
-      instance_class = "db.t3.small"
+      instance_class = "db.t3.large"
     }
 }
 
