@@ -143,9 +143,10 @@ module "vpc" {
 #}
 
 module "eks" {
-  source             = "github.com/r-devops/tf-module-eks"
+  source             = "git::https://github.com/KoulteghDevOps/tf_module_eks.git"
+#  source             = "github.com/r-devops/tf-module-eks"
   ENV                = var.env
-  VERSION            = 1.27
+  eks_version        = 1.27
   PRIVATE_SUBNET_IDS = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), "application", null), "subnet_ids", null)
   PUBLIC_SUBNET_IDS  = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), "public", null), "subnet_ids", null)
   DESIRED_SIZE       = 2
