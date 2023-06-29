@@ -8,6 +8,7 @@ default_vpc_rtid = "rtb-0f4cf25785f56057f"
 kms_arn          = "arn:aws:kms:us-east-1:878756956432:key/c770d687-27ad-4188-b4b0-c3d4ce34a454"
 domain_name      = "gilbraltar.co.uk"
 domain_id        = "Z09569901LP0VHA42NP6C"
+
 vpc = {
   main = {
     cidr_block = "10.0.0.0/16"

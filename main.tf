@@ -32,70 +32,70 @@ module "vpc" {
 #    allow_app_cidr = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["allow_app_cidr"], null), "subnet_cidrs", null)
 #  }
 
-#module "docdb" {
-#  source = "git::https://github.com/KoulteghDevOps/tf_module_docdb.git"
-#
-#  for_each   = var.docdb
-#  subnets    = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["subnet_name"], null), "subnet_ids", null)
-#  allow_db_cidr    = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["allow_db_cidr"], null), "subnet_cidrs", null)
-#  engine_version = each.value["engine_version"]
-#  instance_count = each.value["instance_count"]
-#  instance_class = each.value["instance_class"]
-#
-#  tags             = local.tags
-#  env              = var.env
-#  vpc_id           = local.vpc_id
-#  kms_arn          = var.kms_arn
-#}
-#
-#module "rds" {
-#  source = "git::https://github.com/KoulteghDevOps/tf_module_rds.git"
-#
-#  for_each       = var.rds
-#  subnets        = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["subnet_name"], null), "subnet_ids", null)
-#  allow_db_cidr  = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["allow_db_cidr"], null), "subnet_cidrs", null)
-#  engine_version = each.value["engine_version"]
-#  instance_count = each.value["instance_count"]
-#  instance_class = each.value["instance_class"]
-#
-#  tags           = local.tags
-#  env            = var.env
-#  vpc_id         = local.vpc_id
-#  kms_arn        = var.kms_arn
-#}
-#
-#module "elasticache" {
-#  source = "git::https://github.com/KoulteghDevOps/tf_module_elasticache.git"
-#
-#  for_each   = var.elasticache
-#  subnets    = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["subnet_name"], null), "subnet_ids", null)
-#  allow_db_cidr    = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["allow_db_cidr"], null), "subnet_cidrs", null)
-#  engine_version = each.value["engine_version"]
-#  num_node_groups = each.value["num_node_groups"]
-#  replicas_per_node_group = each.value["replicas_per_node_group"]
-#  node_type = each.value["node_type"]
-#
-#  tags             = local.tags
-#  env              = var.env
-#  vpc_id           = local.vpc_id
-#  kms_arn          = var.kms_arn
-#}
-#
-#module "rabbitmq" {
-#  source = "git::https://github.com/KoulteghDevOps/tf_module_amazon_mq.git"
-#
-#  for_each      = var.rabbitmq
-#  subnets       = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["subnet_name"], null), "subnet_ids", null)
-#  allow_db_cidr = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["allow_db_cidr"], null), "subnet_cidrs", null)
-#  instance_type = each.value["instance_type"]
-#
-#  tags          = local.tags
-#  env           = var.env
-#  vpc_id        = local.vpc_id
-#  kms_arn       = var.kms_arn
-#  bastion_cidr  = var.bastion_cidr
-#  domain_id     = var.domain_id
-#}
+module "docdb" {
+  source = "git::https://github.com/KoulteghDevOps/tf_module_docdb.git"
+
+  for_each   = var.docdb
+  subnets    = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["subnet_name"], null), "subnet_ids", null)
+  allow_db_cidr    = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["allow_db_cidr"], null), "subnet_cidrs", null)
+  engine_version = each.value["engine_version"]
+  instance_count = each.value["instance_count"]
+  instance_class = each.value["instance_class"]
+
+  tags             = local.tags
+  env              = var.env
+  vpc_id           = local.vpc_id
+  kms_arn          = var.kms_arn
+}
+
+module "rds" {
+  source = "git::https://github.com/KoulteghDevOps/tf_module_rds.git"
+
+  for_each       = var.rds
+  subnets        = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["subnet_name"], null), "subnet_ids", null)
+  allow_db_cidr  = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["allow_db_cidr"], null), "subnet_cidrs", null)
+  engine_version = each.value["engine_version"]
+  instance_count = each.value["instance_count"]
+  instance_class = each.value["instance_class"]
+
+  tags           = local.tags
+  env            = var.env
+  vpc_id         = local.vpc_id
+  kms_arn        = var.kms_arn
+}
+
+module "elasticache" {
+  source = "git::https://github.com/KoulteghDevOps/tf_module_elasticache.git"
+
+  for_each   = var.elasticache
+  subnets    = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["subnet_name"], null), "subnet_ids", null)
+  allow_db_cidr    = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["allow_db_cidr"], null), "subnet_cidrs", null)
+  engine_version = each.value["engine_version"]
+  num_node_groups = each.value["num_node_groups"]
+  replicas_per_node_group = each.value["replicas_per_node_group"]
+  node_type = each.value["node_type"]
+
+  tags             = local.tags
+  env              = var.env
+  vpc_id           = local.vpc_id
+  kms_arn          = var.kms_arn
+}
+
+module "rabbitmq" {
+  source = "git::https://github.com/KoulteghDevOps/tf_module_amazon_mq.git"
+
+  for_each      = var.rabbitmq
+  subnets       = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["subnet_name"], null), "subnet_ids", null)
+  allow_db_cidr = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["allow_db_cidr"], null), "subnet_cidrs", null)
+  instance_type = each.value["instance_type"]
+
+  tags          = local.tags
+  env           = var.env
+  vpc_id        = local.vpc_id
+  kms_arn       = var.kms_arn
+  bastion_cidr  = var.bastion_cidr
+  domain_id     = var.domain_id
+}
 
 #module "alb" {
 #  source = "git::https://github.com/KoulteghDevOps/tf_module_alb.git"
@@ -152,37 +152,38 @@ module "eks" {
   DESIRED_SIZE       = 2
   MAX_SIZE           = 2
   MIN_SIZE           = 2
+  kms_arn            = var.kms_arn
 }
 
-#### Load Runner
-data "aws_ami" "ami" {
-  most_recent = true
-  name_regex  = "Centos-8-DevOps-Practice"
-  owners      = ["973714476881"]
-}
-
-resource "aws_instance" "load" {
-  ami                    = data.aws_ami.ami.id
-  instance_type          = "t3.medium"
-  vpc_security_group_ids = ["sg-0df7c3b1e7cde7c32"]
-  tags = {
-    Name = "load-runner"
-  }
-}
-
-resource "null_resource" "load" {
-  provisioner "remote-exec" {
-
-    connection {
-      host     = aws_instance.load.private_ip
-      user     = "root"
-      password = "DevOps321"
-    }
-
-    inline = [
-      "curl -s https://raw.githubusercontent.com/linuxautomations/labautomation/master/tools/docker/install.sh | bash",
-      "docker pull robotshop/rs-load"
-    ]
-
-  }
-}
+##### Load Runner
+#data "aws_ami" "ami" {
+#  most_recent = true
+#  name_regex  = "Centos-8-DevOps-Practice"
+#  owners      = ["973714476881"]
+#}
+#
+#resource "aws_instance" "load" {
+#  ami                    = data.aws_ami.ami.id
+#  instance_type          = "t3.medium"
+#  vpc_security_group_ids = ["sg-0df7c3b1e7cde7c32"]
+#  tags = {
+#    Name = "load-runner"
+#  }
+#}
+#
+#resource "null_resource" "load" {
+#  provisioner "remote-exec" {
+#
+#    connection {
+#      host     = aws_instance.load.private_ip
+#      user     = "root"
+#      password = "DevOps321"
+#    }
+#
+#    inline = [
+#      "curl -s https://raw.githubusercontent.com/linuxautomations/labautomation/master/tools/docker/install.sh | bash",
+#      "docker pull robotshop/rs-load"
+#    ]
+#
+#  }
+#}
