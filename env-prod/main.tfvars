@@ -15,22 +15,22 @@ vpc = {
     subnets = {
       public = {
         name       = "public"
-        cidr_block = ["10.10.0.0/24", "10.10.1.0/24"]
+        cidr_block = ["10.0.0.0/24", "10.10.1.0/24"]
         azs        = ["us-east-1a", "us-east-1b"]
       }
       webserver = {
         name       = "webserver"
-        cidr_block = ["10.10.2.0/24", "10.10.3.0/24"]
+        cidr_block = ["10.0.2.0/24", "10.0.3.0/24"]
         azs        = ["us-east-1a", "us-east-1b"]
       }
       application = {
         name       = "application"
-        cidr_block = ["10.10.4.0/24", "10.10.5.0/24"]
+        cidr_block = ["10.0.4.0/24", "10.0.5.0/24"]
         azs        = ["us-east-1a", "us-east-1b"]
       }
       database = {
         name       = "database"
-        cidr_block = ["10.10.6.0/24", "10.10.7.0/24"]
+        cidr_block = ["10.0.6.0/24", "10.0.7.0/24"]
         azs        = ["us-east-1a", "us-east-1b"]
       }
     }
